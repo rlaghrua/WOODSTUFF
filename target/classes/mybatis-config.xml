@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0/EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+	
+<configuration>
+	<typeAliases>
+		
+		<typeAlias type="com.edu.vo.MemberVO" alias ="MemberVO"/>
+		<typeAlias type="com.edu.vo.LoginVO" alias ="loginVO"/>
+		
+		
+		
+		
+		
+		
+		
+		<!-- 그 외 -->
+		
+		<typeAlias type="com.edu.vo.ChangePwVO" alias ="changePwVO"/>
+		<typeAlias type="com.edu.vo.EventVO" alias ="eventVO"/>
+		
+		<!-- 김호겸 -->
+		<typeAlias type="com.edu.vo.NoticeVO" alias ="NoticeVO"/>
+		<typeAlias type="com.edu.vo.CriteriaVO" alias ="CriteriaVO"/>
+		<typeAlias type="com.edu.vo.PageMakerVO" alias ="PageMakerVO"/>
+		<typeAlias type="com.edu.vo.ServiceVO" alias ="ServiceVO"/>
+		<typeAlias type="com.edu.vo.ReplyVO" alias ="ReplyVO"/>
+		<typeAlias type="com.edu.vo.UserVO" alias ="UserVO"/>
+	</typeAliases>
+</configuration>

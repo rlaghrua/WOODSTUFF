@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">	
+		<!-- http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.1.xsd" -->
+		
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+		<property name="username" value="spring"/>
+		<property name="password" value="1234"/>
+	</bean>
+	mybatis 연동 getconnection, close만 가능
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="configLocation" value="classpath:mybatis-config.xml"/>
+		<property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"/>
+	</bean>
+	
+	
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
+	</bean>
+		 -->
+		 
+	<!-- 실험용 localhost -->	 
+	<!-- <bean id="dataSource"
+        class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+        <property name="url"
+            value="jdbc:mysql://localhost:3306/ezen_pjt?serverTimezone=UTC&amp;characterEncoding=utf8&amp;useSSL=false&amp;autoReconnection=true&amp;allowPublicKeyRetrieval=true">
+        </property>
+        <property name="username" value="root"></property>
+        <property name="password" value="1234"></property>
+    </bean>       
+        
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="configLocation" value="classpath:mybatis-config.xml"/>
+		<property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"/>
+	</bean>
+	
+	
+	<bean id="sqlSessoinTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>  -->
+		 
+		 
+		 <!-- MySQL dataSource -->
+		 <!-- 작업용 localhost 연결 -->
+     <bean id="dataSource"
+        class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+        <property name="url"
+            value="jdbc:mysql://localhost:3306/woodstuff?serverTimezone=UTC&amp;characterEncoding=utf8&amp;useSSL=false&amp;autoReconnection=true&amp;allowPublicKeyRetrieval=true">
+        </property>
+        <property name="username" value="spring"></property>
+        <property name="password" value="1234"></property>
+    </bean>       
+        
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="configLocation" value="classpath:mybatis-config.xml"/>
+		<property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"/>
+	</bean>
+	
+	
+	<bean id="sqlSessoinTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean> 
+	<!-- localhost 연결 끝 -->
+	
+	 <!-- 서버 연결 -->
+	<!-- <bean id="dataSource"
+        class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+        <property name="url"
+            value="jdbc:mysql://jjezen.cafe24.com:3307/allAround?serverTimezone=UTC&amp;characterEncoding=utf8&amp;useSSL=false&amp;autoReconnection=true&amp;allowPublicKeyRetrieval=true">
+        </property>
+        <property name="username" value="allAround"></property>
+        <property name="password" value="allAround1234!"></property>
+    </bean>        
+        
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="configLocation" value="classpath:mybatis-config.xml"/>
+		<property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"/>
+	</bean>
+	
+	
+	<bean id="sqlSessoinTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean> -->
+	<!-- 서버 연결 ㄲ끝-->
+	
+
+	<!-- transactionManager -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    	<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager" />
+	<!-- 이메일 발송 bean 설정 -->   
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="smtp.gmail.com" />
+        <property name="port" value="587" />
+        <property name="username" value="chesye21@gmail.com" />
+        <property name="password" value="yawslcrashawuoha" />
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.transport.protocol">smtp</prop>
+                <prop key="mail.debug">true</prop>
+                <prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>
+                <prop key="mail.smtp.ssl.protocols">TLSv1.2</prop>
+            </props>
+        </property>
+    </bean>
+	
+	
+	
+	
+	
+</beans>

@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+/*로그인이 필요합니다 모달*/
+.login_close{
+	text-align:left !important;
+	margin: 0px 0px 0px 0px !important;
+}
+.login_modal_header{
+	border-bottom: none !important;
+	padding: 1rem 1rem 0px 27px !important; 
+}
+.login_modal_body > h4{
+	font-weight: 600;
+	padding-left: 27px;
+}
+
+.login_modal_content{
+	padding: 20px;
+}
+
+.login_modal_footer{
+	justify-content: space-evenly !important;
+	border-top: none !important;
+}
+
+.login_modalBtn{
+	width: 40%;
+	height: 60px;
+}
+
+/*글 남기기 모달*/
+#writeModal{
+    width: 100%;
+    height: 1000px !important;
+}
+
+.div2{
+    display: inline-block;
+    border-radius: 50px;
+    width: 32%;
+    margin-bottom: 10px;
+    justify-content: space-evenly;
+}
+.clicked {
+    color: white;
+    background-color: #2caabe;
+}
+.clicked > span{
+    background-color: red;
+}
+
+/*0513 추가*/
+.qnaWriteWarning{
+	background-color: #ffefef;
+    color: #ff7272;
+    padding: 15px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.commuWriteWarning{
+    background-color: #ffefef;
+    color: #ff7272;
+    padding: 15px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.commuWriteNotice{
+    font-size: 10px;
+}
+.modal-body {
+    max-height: calc(100vh - 400px);
+    overflow-y: auto;
+}
+.writeModalH4{
+    font-weight: bold;
+    padding-top: 5px;
+}
+.modal-header{
+    border-bottom: none;
+    padding-bottom: 0px;
+}
+.write_modal_close{
+    padding-bottom: 0px;
+}
+textarea{
+    width: 100%; 
+    max-width: 100%;
+    margin-top: 15px;
+}
+.bold{
+	font-weight: bold;
+}
+
+/*qna모달*/
+/*비공개 버튼*/
+input[class="cb"]+label {
+    display: inline-block;
+    border-radius: 30px;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #bcbcbc;
+    cursor: pointer;
+    margin-top: 5px;
+}
+input[class="cb"]:checked+label {
+    background-color: #17a2b8;
+    border: 2px solid #17a2b8;
+}
+input[class="cb"] {
+    display: none;
+}
+
+/*비공개 버튼 끝*/
+
+.cbp{
+    width: 100px;
+    display:inline-block;
+    margin-bottom: 30px;
+    position: relative;
+    bottom: 14px;
+}
+/* .qnaBtn{
+    position: relative;
+    bottom: 14px;
+    left: 274px;
+} */
+/* .qnaBtn2{
+    position: relative;
+    bottom: 14px;
+    left: 205px;
+}
+.qnaBtn3{
+    position: relative;
+    bottom: 14px;
+    left: 210px;
+} */

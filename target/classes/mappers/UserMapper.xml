@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0/EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="UserMapper">
+
+	<select id="user_list" resultType="UserVO">
+		select user_idx
+				,userName
+				,userAge
+				,userGender
+				,userEmail
+				,userTitle
+				,userContent
+			from user
+	</select>
+	
+	<insert id="write" parameterType="UserVO">
+		 insert into user(
+		 	userName
+		 	,userAge
+		 	,userGender
+		 	,userEmail
+		 	,userTitle
+		 	,userContent
+		 )values (
+		 	#{userName}
+		 	,#{userAge}
+		 	,#{userGender}
+		 	,#{userEmail}
+		 	,#{userTitle}
+		 	,#{userContent}
+		 )
+	</insert>
+	
+	<select id="view" resultType="UserVO" parameterType="int">
+		select user_idx
+				,userName
+				,userAge,
+				,userGender
+				,userEmail
+				,userTitle
+				,userContent
+				where user_idx = #{user_idx}
+	</select>
+
+
+
+</mapper>
