@@ -62,7 +62,7 @@
                   <li class="nav-item"><a class="nav-link active" aria-current="page" href="<%=request.getContextPath()%>/event/event_main.do">Home</a></li>
                   <li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/notice/notice_list.do">Notice</a></li>
                   <li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/service/service_list.do">Service</a></li>
-                  <li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/question/question.do">Q&A</a></li>
+                  <li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/question/question.do">FAQ</a></li>
                   
                   <c:if test="${login eq null}">
 	                    <li class="nav-item">
