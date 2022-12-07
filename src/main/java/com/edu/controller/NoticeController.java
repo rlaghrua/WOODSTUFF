@@ -53,7 +53,6 @@ public class NoticeController {
 	
 	@RequestMapping(value="/notice_write.do", method=RequestMethod.POST)
 	public String write(NoticeVO vo) {
-		System.out.println(vo.toString());
 		int result = noticeservice.write(vo);
 		return "redirect:notice_list.do";
 	}

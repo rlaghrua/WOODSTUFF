@@ -53,7 +53,7 @@
 </head>
 <body>
 
- <c:import url="/header.do"></c:import>
+ <%-- <c:import url="/header.do"></c:import> --%>
 
 <div style="text-align: center; border: 1px solid #dddddd">
 
